@@ -16,7 +16,6 @@ dpkg -i dumb-init_*.deb && rm -f dumb-init_*.deb && \
 apt-get clean && apt-get autoremove -y && rm -rf /var/lib/apt/lists/*
 
 ENV AzureWebJobsScriptRoot=/home/site/wwwroot
-COPY func/ /home/site/wwwroot
 
 # ssh
 ENV SSH_PASSWD "root:Docker!"
@@ -32,12 +31,5 @@ COPY .config/init.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/init.sh
 
 EXPOSE 8000 2222
-
-# Fix Windows Line Endings
-# RUN apt-get update && apt-get install -y dos2unix
-# RUN dos2unix /usr/local/bin/init.sh && apt-get --purge remove -y dos2unix && rm -rf /var/lib/apt/lists/*
-
-#WORKDIR /home/site/wwwroot
-#RUN npm install
 
 CMD ["init.sh"]

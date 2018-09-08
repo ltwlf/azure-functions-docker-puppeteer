@@ -1,4 +1,5 @@
 {
     "azureFunctions.projectLanguage": "JavaScript",
-    "azureFunctions.projectRuntime": "beta"
+    "azureFunctions.projectRuntime": "beta",
+    "docker.defaultRegistryPath": "leitwolf"
 }
