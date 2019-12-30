@@ -1,4 +1,4 @@
-FROM leitwolf/azure-functions-node
+FROM mcr.microsoft.com/azure-functions/node:2.0-appservice
 
 # Chromium dependencies
 RUN apt-get update -yq \
